@@ -47,7 +47,7 @@ beginShape()
   for (var i = 0; i <= 180; i += 4.5) {
     var index = floor(map(i, 0, 180, 0, wave.length-1))
     
-    var r = map(wave[index], -1, 1, 50, 250)
+    var r = map(wave[index], -1, 1, 50, 250 + amp * 0.4)
   
     var x = r * sin(i)  * t
     var y = r * cos(i)
@@ -82,7 +82,7 @@ function mouseClicked() {
 
 class Particle {
   constructor() {
-    this.pos = p5.Vector.random2D().mult(random(200, 350))
+    this.pos = p5.Vector.random2D().mult(random( 80 + amp, 350))
     this.vel = createVector(0,0)
     this.acc = this.pos.copy().mult(random(0.0001, 0.00000009))
 
