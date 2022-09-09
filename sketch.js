@@ -2,14 +2,14 @@
 //A Visualized Song
 //Created by: Marlon Barrios Solano
 // Date: 2022-09-04
-// Music by Grigoriy Nuzhny
+// Music by Michael Ramir C.     
 
 var song
 var fft
 var particles = []
 
 function preload() {
-  song = loadSound('m.mp3')
+  song = loadSound('m4.mp3')
 }
 
 function setup() {
@@ -32,7 +32,7 @@ function draw() {
 amp = fft.getEnergy(20, 250)
  
 stroke(random(255))
-  strokeWeight(amp * 0.08)
+  strokeWeight(amp * 0.1)
   fill(random(0,255), random(0,255), random(0,255), 30)
  
 
@@ -70,7 +70,7 @@ particles[i].update(amp > 220)
 }
 }
 
-function mouseClicked() {
+function mousePressed() {
   if (song.isPlaying()) {
     song.pause()
     noLoop()
