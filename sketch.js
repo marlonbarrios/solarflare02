@@ -47,7 +47,7 @@ beginShape()
   for (var i = 0; i <= 180; i += 4.5) {
     var index = floor(map(i, 0, 180, 0, wave.length-1))
     
-    var r = map(wave[index], -1, 1, 50, 250 + amp * 0.4)
+    var r = map(wave[index], -1, 1, 50, 250 + amp * 0.04)
   
     var x = r * sin(i)  * t
     var y = r * cos(i)
@@ -118,7 +118,7 @@ this.pos.add(this.vel)
  fill(this.color)
  stroke(random(amp))
  strokeWeight(amp * 0.03)
-  ellipse(this.pos.x, this.pos.y, this.w + amp * 0.05 )
+  ellipse(this.pos.x, this.pos.y, this.w + amp * 0.001 )
  }
 }
 
